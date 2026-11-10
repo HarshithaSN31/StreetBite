@@ -1,0 +1,69 @@
+@import 'leaflet/dist/leaflet.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Global Background: Warm Cream (Customer-facing pages) ── */
+:root {
+  --bg-cream: #fdf8f4;
+  --bg-cream-alt: #fef9f5;
+  --text-primary: #1a1a1a;
+  --text-secondary: #64748b;
+  --accent-orange: #f97316;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-cream);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* ── Admin portal keeps dark background ── */
+body.admin-dark {
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
+
+/* ── Custom scrollbar styling ── */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fef3e2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fed7aa;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f97316;
+}
+
+/* ── Leaflet map ── */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
+
+/* ── Smooth fade-in utility ── */
+.animate-in {
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Hide scrollbar but allow scroll ── */
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
